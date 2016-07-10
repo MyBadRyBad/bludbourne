@@ -5,15 +5,18 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.Game;
+import com.rybad.libgdx.bludbourne.screens.MainGameScreen;
 
 public class BludBourne extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
+
+    public static final MainGameScreen _mainGameScreen = new MainGameScreen();
 	
 	@Override
 	public void create () {
-		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
+        setScreen(_mainGameScreen);
 	}
 
 	@Override
@@ -27,7 +30,6 @@ public class BludBourne extends ApplicationAdapter {
 	
 	@Override
 	public void dispose () {
-		batch.dispose();
-		img.dispose();
+        _mainGameScreen.dispose();
 	}
 }
